@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  net-core-api:
+    build:
+      context: ./NetCoreApis
+      dockerfile: Dockerfile
+    ports:
+      - "5072:5072"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - HTTP_PORTS=5072
+    restart: always
