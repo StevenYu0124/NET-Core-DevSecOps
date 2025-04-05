@@ -12,7 +12,7 @@ I will practice DevSecOps with NET core APIs here.
 1. Clone the repository:
     ```bash
     git clone https://github.com/StevenYu0124/NET-Core-DevSecOps.git
-    cd "NET Core APIs"
+    cd "NET-Core-DevSecOps\NET Core APIs"
     ```
 
 2. Restore the dependencies:
