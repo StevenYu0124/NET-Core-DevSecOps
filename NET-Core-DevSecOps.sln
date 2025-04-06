@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreApis", "NetCoreApis\NetCoreApis.csproj", "{3E34E824-1D30-DF15-FF35-CB3211A43565}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreApis.UnitTests", "NetCoreApis.UnitTests\NetCoreApis.UnitTests.csproj", "{964C484B-5525-8A27-7E3D-25ADF2E71858}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,11 +16,15 @@ Global
 		{3E34E824-1D30-DF15-FF35-CB3211A43565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E34E824-1D30-DF15-FF35-CB3211A43565}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E34E824-1D30-DF15-FF35-CB3211A43565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{964C484B-5525-8A27-7E3D-25ADF2E71858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{964C484B-5525-8A27-7E3D-25ADF2E71858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{964C484B-5525-8A27-7E3D-25ADF2E71858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{964C484B-5525-8A27-7E3D-25ADF2E71858}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A64064A2-0094-4BDA-AD1C-2669997D59D7}
+		SolutionGuid = {140402BE-CD33-41E8-AD7D-CC42A6E64B61}
 	EndGlobalSection
 EndGlobal
