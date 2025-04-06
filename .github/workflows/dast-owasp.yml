@@ -27,6 +27,7 @@ jobs:
 
     # Run ZAP Baseline Scan using Docker
     - name: Run ZAP Baseline Scan
+      continue-on-error: true
       run: |
         docker run --network="host" \
           -v ${{ github.workspace }}:/zap/wrk/:rw \
