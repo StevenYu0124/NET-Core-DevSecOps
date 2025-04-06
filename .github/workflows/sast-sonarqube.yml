@@ -27,7 +27,9 @@ jobs:
       - name: Run SonarCloud analysis
         uses: SonarSource/sonarcloud-github-action@v5
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          sonar-token: ${{ secrets.SONAR_TOKEN }}
+          sonar-project-key: 'StevenYu0124_NET-Core-DevSecOps'
+          sonar-project-name: 'NET-Core-DevSecOps'
 
       - name: Run tests
         run: dotnet test --no-build --verbosity normal
