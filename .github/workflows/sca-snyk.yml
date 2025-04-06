@@ -13,7 +13,7 @@ jobs:
       matrix:
         project: ['NetCoreApis/NetCoreApis.csproj']
     steps:
-      - uses: actions/checkout@4
+      - uses: actions/checkout@3
 
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
