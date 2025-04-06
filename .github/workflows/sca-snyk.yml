@@ -1,0 +1,32 @@
+name: SCA - Snyk
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  snyk:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ['NetCoreApis/NetCoreApis.csproj']
+    steps:
+      - uses: actions/checkout@4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.406'
+      
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+
+      - name: Run Snyk to check for vulnerabilities
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk test --file=NET-Core-DevSecOps.sln
