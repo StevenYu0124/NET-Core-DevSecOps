@@ -10,6 +10,9 @@ on:
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./NetCoreApis
 
     steps:
     - name: Checkout code
