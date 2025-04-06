@@ -1,0 +1,39 @@
+name: ZAP DAST Scan
+
+on:
+  workflow_dispatch: # you can also trigger on push/pr
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Start your .NET API (optional if already deployed)
+    - name: Build and run .NET API
+      run: |
+        docker build -t myapi .
+        docker run -d -p 5072:5072 --name myapi-container myapi
+        sleep 15 # wait for API to be fully up
+
+    # Run ZAP Baseline Scan using Docker
+    - name: Run ZAP Baseline Scan
+      run: |
+        docker run --network="host" \
+          -v ${{ github.workspace }}:/zap/wrk/:rw \
+          ghcr.io/zaproxy/zaproxy:stable zap-baseline.py \
+          -t http://localhost:5072 \
+          -g gen.conf \
+          -r zap_report.html \
+          -x zap_report.xml \
+          -J zap_report.json \
+          -I
+
+    # Upload HTML report as artifact
+    - name: Upload ZAP Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: ZAP Scan Report
+        path: zap_report.html
