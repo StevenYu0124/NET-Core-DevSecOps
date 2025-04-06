@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
@@ -25,6 +27,6 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Run SonarCloud analysis
-        uses: SonarSource/sonarcloud-github-action@v5
+        uses: SonarSource/sonarqube-scan-action@v5.1.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
