@@ -10,9 +10,6 @@ on:
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./NetCoreApis
 
     steps:
     - name: Checkout code
@@ -21,6 +18,7 @@ jobs:
     # Start your .NET API (optional if already deployed)
     - name: Build and run .NET API
       run: |
+        cd NetCoreApis
         docker build -t myapi .
         docker run -d -p 5072:5072 --name myapi-container myapi
         sleep 15 # wait for API to be fully up
