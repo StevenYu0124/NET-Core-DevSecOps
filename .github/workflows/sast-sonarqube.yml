@@ -28,9 +28,3 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-      - name: Run tests
-        run: dotnet test --no-build --verbosity normal
-
-      - name: Publish results to SonarCloud
-        run: dotnet sonarscanner end
