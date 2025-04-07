@@ -28,7 +28,7 @@ jobs:
         docker run --user root --network="host" \
           -v ${{ github.workspace }}:/zap/wrk/:rw \
           zaproxy/zap-stable zap-api-scan.py \
-          -t http://localhost:8080/swagger/v1/swagger.json \
+          -t http://localhost:5072/swagger/v1/swagger.json \
           -f openapi \
           -r zap-report.html
 
