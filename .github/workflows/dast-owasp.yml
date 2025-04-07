@@ -1,4 +1,4 @@
-name: ZAP DAST Scan
+name: DAST - OWASP ZAP Scan
 
 on:
     push:
@@ -15,12 +15,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # Start your .NET API (optional if already deployed)
     - name: Build and run .NET API
       run: |
         cd NetCoreApis
         docker build -t myapi .
-        docker run -d -p 5072:5072 --name myapi-container myapi
+        docker run -d -p 5072:8080 --name myapi-container myapi
         sleep 15 # wait for API to be fully up
 
     # Run ZAP Baseline Scan using Docker
