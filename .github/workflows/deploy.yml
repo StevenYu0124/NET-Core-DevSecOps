@@ -22,3 +22,20 @@ jobs:
         docker build -t net-core-devsecops:latest .
         docker tag net-core-devsecops:latest ${{ secrets.DOCKER_USERNAME }}/net-core-devsecops:latest
         docker push ${{ secrets.DOCKER_USERNAME }}/net-core-devsecops:latest
+    
+        - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+  
+    - name: Install Ansible
+      run: pip install ansible
+
+    - name: Add SSH key
+      uses: webfactory/ssh-agent@v0.9.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Run Ansible Playbook
+      run: |
+        ansible-playbook ansible/deploy.yml -i ansible/inventory
