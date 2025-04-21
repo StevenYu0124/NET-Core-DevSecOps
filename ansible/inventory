@@ -1,2 +1,2 @@
 [droplet]
-206.189.80.103 ansible_user=root
+206.189.80.103 ansible_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'
