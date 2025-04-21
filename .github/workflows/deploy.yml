@@ -23,10 +23,10 @@ jobs:
         docker tag net-core-devsecops:latest ${{ secrets.DOCKER_USERNAME }}/net-core-devsecops:latest
         docker push ${{ secrets.DOCKER_USERNAME }}/net-core-devsecops:latest
     
-        - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
   
     - name: Install Ansible
       run: pip install ansible
