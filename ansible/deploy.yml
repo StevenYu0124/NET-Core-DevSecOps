@@ -28,3 +28,6 @@
         restart_policy: always
         ports:
           - "80:5072"
+        env:
+          ASPNETCORE_ENVIRONMENT: "Production"
+          ASPNETCORE_URLS: "http://+:5072"
