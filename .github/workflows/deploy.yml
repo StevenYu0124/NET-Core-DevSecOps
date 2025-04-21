@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    
+    - name: Go to api directory
+      run: cd NetCoreApis
 
     - name: Log in to Docker Hub
       run: echo "${{ secrets.DOCKER_READ_WRITE_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
