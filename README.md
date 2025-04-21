@@ -38,8 +38,8 @@ I will practice DevSecOps with NET core APIs here.
     git clone https://github.com/StevenYu0124/NET-Core-DevSecOps.git
     cd NET-Core-DevSecOps/
     ```
-
-2. Build and run the project using Docker Compose:
+2. Run Docker Desktop.
+3. Build and run the project using Docker Compose:
     ```bash
     docker compose up --build
     ```
